@@ -685,7 +685,7 @@ RCT_EXPORT_METHOD(openContactForm:(NSDictionary *)contactData callback:(RCTRespo
 
 RCT_EXPORT_METHOD(openExistingContact:(NSDictionary *)contactData callback:(RCTResponseSenderBlock)callback)
 {
-    NSLog(@"deleteContact")
+    NSLog(@"deleteContact");
     if(!contactStore) {
         contactStore = [[CNContactStore alloc] init];
     }
@@ -1177,8 +1177,8 @@ RCT_EXPORT_METHOD(deleteContact:(NSDictionary *)contactData callback:(RCTRespons
 
         UIViewController *currentViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
         [currentViewController.presentedViewController dismissViewControllerAnimated:true completion:nil];
-        NSLog(@"deleteContact")
-        NSLog(currentViewController.presentedViewController)
+        NSLog(@"deleteContact");
+        NSLog(currentViewController.presentedViewController);
 
         callback(@[[NSNull null], recordID]);
     }
