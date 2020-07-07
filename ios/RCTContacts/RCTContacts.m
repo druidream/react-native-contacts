@@ -1174,6 +1174,9 @@ RCT_EXPORT_METHOD(deleteContact:(NSDictionary *)contactData callback:(RCTRespons
         [saveRequest deleteContact:contact];
         [contactStore executeSaveRequest:saveRequest error:&error];
 
+        UIViewController *currentViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [currentViewController.presentedViewController dismissViewControllerAnimated:true completion:nil];
+
         callback(@[[NSNull null], recordID]);
     }
     @catch (NSException *exception) {
